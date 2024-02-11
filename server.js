@@ -13,3 +13,8 @@ app.get('/notes', (req, res) =>
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
+
+// Listen for requests
+app.listen(PORT, () => 
+    console.log(`App listening at http://localhost:${PORT}`)
+);
