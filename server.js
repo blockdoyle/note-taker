@@ -29,6 +29,14 @@ app.post('/api/notes', (req, res) => {
 //   console.log(`Added new note: ${newNote.title} {id: ${newNote.id}}`);
 });
 
+// DELETE route for /api/notes/:id to delete a note from the db.json file
+app.delete('/api/notes/:id', (req, res) => {
+  const db = JSON.parse(fs.readFileSync(path.join(__dirname, '/db/db.json')));
+  const newDb = db.filter(note => note.id !== req.params.id);
+  fs.writeFileSync(path.join(__dirname, '/db/db.json'), JSON.stringify(newDb));
+  res.json({ ok: true });
+});
+
 // GET route for /notes returns notes.html
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
