@@ -1,6 +1,8 @@
 # Note-Taker
   
+  ![overview](overview-sc.png)
   ## Description
+  [Link to Application](https://bld-note-taker-47b6a2f88255.herokuapp.com/notes)
   Note-taker is a web application that allows you to write and save notes so that you can better organize your life.
   ## Table of Contents
   - [Installation](#installation)
